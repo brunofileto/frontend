@@ -5,7 +5,17 @@ import { login } from "../../services/auth";
 import api from '../../services/api';
 import { getToken } from "../../services/auth";
 
-class Home extends Component {
+type State = {
+    username: number,
+    password: string,
+}
+
+class Home extends Component < State > {
+    state = {
+        username: '',
+        password: '',
+  };
+
     constructor(props) {
         super(props);
         this.state = {
