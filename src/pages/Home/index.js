@@ -8,12 +8,14 @@ import { getToken } from "../../services/auth";
 type State = {
     username: number,
     password: string,
+    history: string,
 }
 
 class Home extends Component < State > {
     state = {
         username: '',
         password: '',
+        history: '',
         };
 
     handleChange = this.handleChange.bind(this);
