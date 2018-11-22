@@ -14,17 +14,10 @@ class Home extends Component < State > {
     state = {
         username: '',
         password: '',
-  };
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: "",
-            password: ""
         };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSignIn = this.handleSignIn.bind(this);
-    };
+
+    handleChange = this.handleChange.bind(this);
+    handleSignIn = this.handleSignIn.bind(this);
 
     handleChange(e) {
         const { name, value } = e.currentTarget
