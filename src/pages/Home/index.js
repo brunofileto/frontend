@@ -17,8 +17,9 @@ class Home extends Component {
     };
 
     handleChange(e) {
+        const { name, value } = e.currentTarget
         this.setState({
-            [e.target.name]: e.target.value});
+            [name]: value});
     }
 
     handleSignIn(e) { 
