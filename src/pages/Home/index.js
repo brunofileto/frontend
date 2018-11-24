@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import { login } from "../../services/auth";
-import api from '../../services/api';
+import api from "../../services/api";
 import { getToken } from "../../services/auth";
+
+import type { RouterHistory } from "react-router-dom";
 
 type State = {
     username: number,
     password: string,
-    history: string,
+    history: RouterHistory,
 }
 
 class Home extends Component < State > {
