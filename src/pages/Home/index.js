@@ -14,14 +14,14 @@ type State = {
 }
 
 class Home extends Component < State > {
+    handleChange = this.handleChange.bind(this);
+    handleSignIn = this.handleSignIn.bind(this);
+
     state = {
         username: '',
         password: '',
         history: '',
         };
-
-    handleChange = this.handleChange.bind(this);
-    handleSignIn = this.handleSignIn.bind(this);
 
     handleChange(e) {
         const { name, value } = e.currentTarget
