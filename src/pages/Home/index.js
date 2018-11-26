@@ -12,7 +12,7 @@ type Props = {
 };
 
 type State = {
-    username: number,
+    username: string,
     password: string,
 };
 
@@ -21,7 +21,7 @@ class Home extends Component < Props, State > {
     handleSignIn = this.handleSignIn.bind(this);
 
     state = {
-        username: 0,
+        username: '',
         password: ''
     };
 
