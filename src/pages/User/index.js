@@ -4,18 +4,26 @@ import { Link, withRouter } from 'react-router-dom';
 import { logout } from "../../services/auth";
 import api from '../../services/api';
 
-class User extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: "",
-            username: "",
-            email: "",
-            first_name: "",
-            last_name: ""
-        };
-        //this.handleChange = this.handleChange.bind(this);
-    };
+type Props = { /* ... */ 
+
+};
+
+type State = {
+    id: number,
+    username: string,
+    email: string,
+    first_name: string,
+    last_name: string,
+};
+
+class User extends Component < Props, State > {
+    state = {
+        id: 0,
+        username: '',
+        email: '',
+        first_name: '',
+        last_name: '',
+    }
 
     // buscar info dos usuarios
     componentDidMount() {
