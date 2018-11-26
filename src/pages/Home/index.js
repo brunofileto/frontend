@@ -7,21 +7,23 @@ import { getToken } from "../../services/auth";
 
 import type { RouterHistory } from "react-router-dom";
 
+type Props = { 
+    history: RouterHistory 
+};
+
 type State = {
     username: number,
     password: string,
-    history: RouterHistory,
-}
+};
 
-class Home extends Component < State > {
+class Home extends Component < Props, State > {
     handleChange = this.handleChange.bind(this);
     handleSignIn = this.handleSignIn.bind(this);
 
     state = {
-        username: '',
-        password: '',
-        history: '',
-        };
+        username: 0,
+        password: ''
+    };
 
     handleChange(e) {
         const { name, value } = e.currentTarget
