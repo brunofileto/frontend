@@ -20,6 +20,23 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.html$/,
+        use: [{
+          loader: 'html-loader',
+          options: {
+            minimize: true
+            }
+        }]
+      },
+      {
+        test: /\.css$/,
+        use: [{
+            loader: "style-loader"
+        }, {
+            loaders: ['style-loader', 'css-loader']
+        }]
       }
     ]
   },
