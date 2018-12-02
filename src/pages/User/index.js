@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { logout } from "../../services/auth";
 import api from '../../services/api';
 
-type Props = { /* ... */ 
+type Props = {
 
 };
 
