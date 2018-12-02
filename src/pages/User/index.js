@@ -4,11 +4,8 @@ import { Link, withRouter } from 'react-router-dom';
 import { logout } from "../../services/auth";
 import api from '../../services/api';
 
-import NavBar from '../../components/NavBar'
+type Props = { /* ... */ 
 
-const UserContext = React.createContext('');
-
-type Props = {
 };
 
 type State = {
@@ -48,7 +45,6 @@ class User extends Component < Props, State > {
     render () {
         return (
             <div id="block1">
-                <NavBar />
                 <p><b>Você está logado</b></p>
                 <Link className="btn btn-primary" onClick={logout} to="/">
                     Log out
