@@ -8,7 +8,10 @@ import { getToken } from "../../services/auth";
 import type { RouterHistory } from "react-router-dom";
 
 type Props = { 
-    history: RouterHistory 
+    history: RouterHistory,
+    handleChange: Function,
+    handleSignIn: Function,
+
 };
 
 type State = {
