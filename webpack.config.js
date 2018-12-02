@@ -20,28 +20,6 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
-      },
-      {
-            test: /\.html$/,
-            use: [{
-                loader: 'html-loader',
-                options: {
-                    minimize: true
-                }
-            }]
-      },
-      {
-        test: /\.css$/,
-        use: [{
-            loader: "style-loader"
-        }, {
-            loader: "css-loader",
-            options: {
-                alias: {
-                    "../fonts/bootstrap": "bootstrap-sass/assets/fonts/bootstrap"
-                }
-            }
-        }]
       }
     ]
   },
