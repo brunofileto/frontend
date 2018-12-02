@@ -15,7 +15,7 @@ type Props = {
 };
 
 type State = {
-    username: string,
+    username: number,
     password: string,
 };
 
