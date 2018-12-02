@@ -1,8 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, createContext } from "react";
 import { Link, withRouter } from 'react-router-dom';
 
 import { logout } from "../../services/auth";
 import api from '../../services/api';
+
+import NavBarHeader from "../../components/NavBarHeader";
+
+const UserContext = React.createContext({
+    first_name: ''
+})
 
 type Props = {
 
@@ -44,22 +50,35 @@ class User extends Component < Props, State > {
     
     render () {
         return (
-            <div id="block1">
-                <p><b>Você está logado</b></p>
-                <Link className="btn btn-primary" onClick={logout} to="/">
-                    Log out
-                </Link>
-                <p><b>Você precisa mudar sua senha</b></p>
-                <Link className="btn btn-primary" to="/password/change">
-                    mudar senha
-                </Link>
-                <p><b>Informações do Usuário</b></p>
-                <p>id: {this.state.id}</p>
-                <p>username: {this.state.username}</p>
-                <p>email: {this.state.email}</p> 
-                <p>first_name: {this.state.first_name}</p> 
-                <p>last_name: {this.state.last_name}</p>           
-            </div>
+            <UserContext.Provider value={{
+                first_name: this.state.first_name
+            }}>
+
+                <div id="block1">
+                    <UserContext.Consumer>
+                        {context => (
+                            <NavBarHeader value={context.first_name}/>
+                            )
+                        }
+                        
+                    </UserContext.Consumer>
+                    <p><b>Você está logado</b></p>
+                    <Link className="btn btn-primary" onClick={logout} to="/">
+                        Log out
+                    </Link>
+                    <p><b>Você precisa mudar sua senha</b></p>
+                    <Link className="btn btn-primary" to="/password/change">
+                        mudar senha
+                    </Link>
+                    <p><b>Informações do Usuário</b></p>
+                    <p>id: {this.state.id}</p>
+                    <p>username: {this.state.username}</p>
+                    <p>email: {this.state.email}</p> 
+                    <p>first_name: {this.state.first_name}</p> 
+                    <p>last_name: {this.state.last_name}</p>           
+                </div>
+
+            </UserContext.Provider>
         )
     }
 }
