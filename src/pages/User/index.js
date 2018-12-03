@@ -6,6 +6,8 @@ import api from '../../services/api';
 
 import NavBarHeader from "../../components/NavBarHeader";
 
+const UserContext = React.createContext('defaultValue');
+
 type Props = {
 
 };
@@ -45,24 +47,36 @@ class User extends Component < Props, State > {
     };
     
     render () {
+        const value = {
+            ...this.state
+        };
+
         return (
-            <div id="block1">
-                <NavBarHeader first_name={this.state.first_name} />
-                <p><b>Você está logado</b></p>
-                <Link className="btn btn-primary" onClick={logout} to="/">
-                    Log out
-                </Link>
-                <p><b>Você precisa mudar sua senha</b></p>
-                <Link className="btn btn-primary" to="/password/change">
-                    mudar senha
-                </Link>
-                <p><b>Informações do Usuário</b></p>
-                <p>id: {this.state.id}</p>
-                <p>username: {this.state.username}</p>
-                <p>email: {this.state.email}</p> 
-                <p>first_name: {this.state.first_name}</p> 
-                <p>last_name: {this.state.last_name}</p>           
-            </div>
+            <UserContext.Provider value={value}>
+                <UserContext.Consumer>
+
+                    {({ id, username, email, first_name, last_name }) => (
+                        <div id="block1">
+                            <NavBarHeader first_name={first_name} />
+                            <p><b>Você está logado</b></p>
+                            <Link className="btn btn-primary" onClick={logout} to="/">
+                                Log out
+                            </Link>
+                            <p><b>Você precisa mudar sua senha</b></p>
+                            <Link className="btn btn-primary" to="/password/change">
+                                mudar senha
+                            </Link>
+                            <p><b>Informações do Usuário</b></p>
+                            <p>id: {id}</p>
+                            <p>username: {username}</p>
+                            <p>email: {email}</p> 
+                            <p>first_name: {first_name}</p> 
+                            <p>last_name: {last_name}</p>           
+                        </div>
+                    )}
+                    
+                </UserContext.Consumer>
+            </UserContext.Provider>
         )
     }
 }
