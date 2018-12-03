@@ -47,7 +47,7 @@ class User extends Component < Props, State > {
     render () {
         return (
             <div id="block1">
-                <NavBarHeader />
+                <NavBarHeader first_name={this.state.first_name} />
                 <p><b>Você está logado</b></p>
                 <Link className="btn btn-primary" onClick={logout} to="/">
                     Log out
