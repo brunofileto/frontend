@@ -53,7 +53,7 @@ class User extends Component < Props, State > {
 
                     {({ id, username, email, first_name, last_name }) => (
                         <div id="block1">
-                            <NavBarHeader first_name={first_name} />
+                            <NavBarHeader first_name={first_name} last_name={last_name} />
                             <p><b>Você está logado</b></p>
                             <Link className="btn btn-primary" onClick={logout} to="/">
                                 Log out
