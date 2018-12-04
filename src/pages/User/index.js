@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import NavBarHeader from "../../components/NavBarHeader";
 
-const UserContext = React.createContext('defaultValue');
+const UserContext: Object = React.createContext();
 
 type Props = {
 
@@ -47,12 +47,8 @@ class User extends Component < Props, State > {
     };
     
     render () {
-        const value = {
-            ...this.state
-        };
-
         return (
-            <UserContext.Provider value={value}>
+            <UserContext.Provider value={this.state}>
                 <UserContext.Consumer>
 
                     {({ id, username, email, first_name, last_name }) => (
