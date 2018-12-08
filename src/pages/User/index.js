@@ -9,7 +9,6 @@ import NavBarHeader from "../../components/NavBarHeader";
 const UserContext: Object = React.createContext();
 
 type Props = {
-
 };
 
 type State = {
