@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { logout } from "../../services/auth";
 import api from '../../services/api';
 
-import NavBarHeader from "../../components/NavBarHeader";
+import NavBarHeader from "../../components/NavBarHeader/NavBarHeader";
 
 const UserContext: Object = React.createContext();
 

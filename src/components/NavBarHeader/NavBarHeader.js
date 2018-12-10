@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import './NavBarHeader.css';
+
 type Props = {
     first_name: string,
     last_name: string,
@@ -8,9 +10,11 @@ type Props = {
 class NavBarHeader extends Component < Props > {
     render () {
         return (
-        <div id="blockNavBar">
-            <p>Bem-Vindo {this.props.first_name} {this.props.last_name}</p>
-        </div>
+            <div>
+                <div className="NavBarHeader">
+                    <p>Bem-Vindo {this.props.first_name} {this.props.last_name}</p>
+                </div>
+            </div>
         )
     }
 }
