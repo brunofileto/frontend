@@ -3,8 +3,11 @@ import { Link, withRouter } from "react-router-dom";
 
 import api from '../../services/api';
 
+import type { RouterHistory } from "react-router-dom";
+
 type Props = {
     // handleClick: Function,
+    history: RouterHistory,
 };
 
 type State = {
@@ -22,7 +25,16 @@ class Enrollment extends Component < Props, State > {
     };
 
     handleClick (e, item) {
-        console.log(item)
+        const { history } = this.props;
+        
+        if (item.evaluation_flag) {
+            console.log('verdadeiro')
+            history.push("/userhome")
+        } 
+        else {
+            console.log('falso')
+            history.push("/evaluation")
+        }
     };
 
     componentDidMount() {

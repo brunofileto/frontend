@@ -42,7 +42,8 @@ class Home extends Component < Props, State > {
         if (!username || !password) {
             alert("Preencha e-mail e senha para continuar!" );
         }
-        else {api.post("/rest-auth/login/", { username, password })
+        else {
+            api.post("/rest-auth/login/", { username, password })
                 .then(function (response) {
                     login(response.data.key);
                     history.push("/enrollment");

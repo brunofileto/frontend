@@ -5,7 +5,8 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Enrollment from "./pages/Enrollment";
-import User from "./pages/UserHome";
+import UserHome from "./pages/UserHome";
+import Evaluation from "./pages/Evaluation";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -25,6 +26,7 @@ const Routes = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <PrivateRoute path="/enrollment" component={Enrollment} />
+      <PrivateRoute path="/evaluation" component={Evaluation} />
       <PrivateRoute path="/userhome" component={UserHome} />
       <Route component={() => <h1>Page not found</h1>} />
     </Switch>
