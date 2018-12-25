@@ -20,7 +20,7 @@ type State = {
     last_name: string,
 };
 
-class User extends Component < Props, State > {
+class UserHome extends Component < Props, State > {
     state = {
         id: 0,
         username: '',
@@ -77,4 +77,4 @@ class User extends Component < Props, State > {
     }
 }
 
-export default withRouter(User);
+export default withRouter(UserHome);
