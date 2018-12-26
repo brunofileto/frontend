@@ -13,7 +13,7 @@ class Evaluation extends Component < Props, State > {
     render () {
         return (
             <p>
-            Teste
+            {getEnrollment()}
             </p>
         )
     }
