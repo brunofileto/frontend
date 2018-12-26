@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import { login } from "../../services/auth";
-import api from "../../services/api";
 import { getToken } from "../../services/auth";
+import api from "../../services/api";
 
 import type { RouterHistory } from "react-router-dom";
 
