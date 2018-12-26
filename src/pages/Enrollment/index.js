@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import api from '../../services/api';
-// import { setEnrollment } from '../../services/storage';
+import { setEnrollment } from '../../services/storage';
 
 import type { RouterHistory } from "react-router-dom";
 
 type Props = {
-    // handleClick: Function,
+    handleClick: Function,
     history: RouterHistory,
 };
 
@@ -27,8 +27,7 @@ class Enrollment extends Component < Props, State > {
 
     handleClick (e, item) {
         const { history } = this.props;
-        // setEnrollment(item.enrollment);
-        // console.log(item.enrollment)
+        setEnrollment(item.enrollment);
         if (item.evaluation_flag) {
             history.push("/userhome")
         }
