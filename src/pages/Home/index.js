@@ -28,6 +28,14 @@ class Home extends Component < Props, State > {
         password: ''
     };
 
+    componentDidMount() {
+        const { history } = this.props;
+
+        if (getToken() != null) {
+            history.push("/userhome");
+        }
+    }
+
     handleChange(e) {
         const { name, value } = e.currentTarget
         this.setState({
