@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 import api from '../../services/api';
 import { setEnrollment } from '../../services/storage';
+import { setEvaluation } from '../../services/storage';
 
 import type { RouterHistory } from "react-router-dom";
 
@@ -28,6 +29,7 @@ class Enrollment extends Component < Props, State > {
     handleClick (e, item) {
         const { history } = this.props;
         setEnrollment(item.enrollment);
+        setEvaluation(item.evaluation_id);
         if (item.evaluation_flag) {
             history.push("/userhome")
         }
